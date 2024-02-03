@@ -11,7 +11,6 @@ import { pathNames } from "../../router/index"
         theme="dark"
       >
         <v-list nav>
-          <!-- FIXME: to のパス名をベタガキするのをやめたい。パス名をインポートするか、型安全を保証したい。 -->
           <v-list-item prepend-icon="mdi-email" title="Home" value="inbox" :to="pathNames.Home" />
           <v-list-item prepend-icon="mdi-account-supervisor-circle" title="Todo" value="supervisors" :to="pathNames.Todo" />
         </v-list>
