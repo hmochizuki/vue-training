@@ -5,13 +5,9 @@ import { pathNames } from "../../router/index"
 <template>
   <v-card>
     <v-layout>
-      <v-navigation-drawer
-        image="https://cdn.vuetifyjs.com/images/backgrounds/bg-2.jpg"
-        permanent
-        theme="dark"
-      >
+      <v-navigation-drawer permanent>
         <v-list nav>
-          <v-list-item prepend-icon="mdi-email" title="Home" value="inbox" :to="pathNames.Home" />
+          <v-list-item prepend-icon="mdi-home" title="Home" value="inbox" :to="pathNames.Home" />
           <v-list-item prepend-icon="mdi-account-supervisor-circle" title="Todo" value="supervisors" :to="pathNames.Todo" />
         </v-list>
       </v-navigation-drawer>

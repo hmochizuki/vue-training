@@ -31,5 +31,6 @@ import Sidebar from "./components/organisms/Sidebar.vue"
 }
 main {
   flex: 4;
+  padding: 80px 40px;
 }
 </style>
