@@ -1,23 +1,31 @@
 <template>
-  <nav id="sidebar">
-    <div class="sidebar-menu">
-      <router-link class="sidebar-text" to="/">Home</router-link>
-    </div>
-    <div>
-      <router-link class="sidebar-text" to="/todo">TODOs</router-link>
-    </div>
-  </nav>
-  <router-view />
+  <div class="app-root">
+    <aside class="sidebar">
+      <nav id="sidebar">
+        <div class="sidebar-menu">
+          <router-link class="sidebar-text" to="/">Home</router-link>
+        </div>
+        <div>
+          <router-link class="sidebar-text" to="/todo">TODOs</router-link>
+        </div>
+      </nav>
+    </aside>
+    <main>
+      <router-view/>
+    </main>
+  </div>
 </template>
 
 <style scoped>
-#sidebar {
-  position: fixed;
+.app-root {
+  display: flex;
+}
+
+.sidebar {
+  flex: 1;
   background-color: #42b883;
   width: 150px;
-  height: 100%;
-  left: 0;
-  top: 0;
+  min-height: 100vh;
 
   padding: 1.5em;
   will-change: filter;
@@ -25,5 +33,9 @@
 }
 .sidebar-text {
   color: #fff;
+  text-align: center;
+}
+main {
+  flex: 4;
 }
 </style>
