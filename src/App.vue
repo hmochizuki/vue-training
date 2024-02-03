@@ -1,15 +1,9 @@
+<script setup lang="ts">
+import Sidebar from "./components/organisms/Sidebar.vue"
+</script>
 <template>
   <div class="app-root">
-    <aside class="sidebar">
-      <nav id="sidebar">
-        <div class="sidebar-menu">
-          <router-link class="sidebar-text" to="/">Home</router-link>
-        </div>
-        <div>
-          <router-link class="sidebar-text" to="/todo">TODOs</router-link>
-        </div>
-      </nav>
-    </aside>
+    <Sidebar />
     <main>
       <router-view/>
     </main>

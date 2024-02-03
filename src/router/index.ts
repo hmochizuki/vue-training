@@ -1,8 +1,14 @@
-import { createRouter, createWebHistory, RouteRecordRaw } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
 import Home from "../pages/Home.vue";
 import Todo from "../pages/Todo.vue";
 
-const routes: Array<RouteRecordRaw> = [
+type PathNames = Record<typeof routes[number]["name"], typeof routes[number]["path"]>
+export const pathNames: PathNames = {
+  Home: "/",
+  Todo: "/todo"
+}
+
+export const routes = [
   {
     path: "/",
     name: "Home",
@@ -13,7 +19,7 @@ const routes: Array<RouteRecordRaw> = [
     name: "Todo",
     component: Todo
   }
-];
+] as const;
 
 const router = createRouter({
   history: createWebHistory(),
