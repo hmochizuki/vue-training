@@ -1,14 +1,16 @@
 import { createRouter, createWebHistory } from "vue-router";
 import Home from "../pages/Home.vue";
 import Todo from "../pages/Todo.vue";
+import Othello from "../pages/Othello/index.vue";
 
 type PathNames = Record<typeof routes[number]["name"], typeof routes[number]["path"]>
 export const pathNames: PathNames = {
   Home: "/",
-  Todo: "/todo"
+  Todo: "/todo",
+  Othello: "/othello"
 }
 
-export const routes = [
+const routes = [
   {
     path: "/",
     name: "Home",
@@ -18,6 +20,11 @@ export const routes = [
     path: "/todo",
     name: "Todo",
     component: Todo
+  },
+  {
+    path: "/othello",
+    name: "Othello",
+    component: Othello
   }
 ] as const;
 
