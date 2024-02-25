@@ -1,17 +1,14 @@
 type StoneColor = "white" | "black"
 
 export type Game = {
-  firstPlayer: Player
-  secondPlayer: Player
+  mode: GameMode
+  playerTurn: StoneColor
   winner: StoneColor | "draw" |null
   status: "beforePlay" | "playing" | "ending"
   board: Board
   turn: StoneColor
 }
 
-export type Player = {
-  stoneColor: StoneColor
-}
 
 export type Board = {
   cells: Cell[][]
@@ -26,3 +23,4 @@ export type Cell = {
 }
 
 export type CellNumber = 0|1|2|3|4|5|6|7
+type GameMode = "player" | "ai"

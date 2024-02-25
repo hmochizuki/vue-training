@@ -38,12 +38,8 @@ const initialBoard: Board = {
 } as const
 
 export const initialGame: Game = {
-  firstPlayer: {
-    stoneColor: "black"
-  },
-  secondPlayer: {
-    stoneColor: "white"
-  },
+  mode: "ai",
+  playerTurn: "black",
   winner: null,
   status: "beforePlay",
   turn: "black",

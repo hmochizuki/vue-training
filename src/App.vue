@@ -14,7 +14,6 @@ import Sidebar from "./components/organisms/Sidebar.vue"
 .app-root {
   display: flex;
 }
-
 .sidebar {
   background-color: #42b883;
   width: 150px;

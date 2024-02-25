@@ -10,8 +10,8 @@ const props = defineProps<{
 
 <style scoped>
 .stone {
-  width: 40px;
-  height: 40px;
+  width: 80%;
+  height: 80%;
   border-radius: 100%;
 }
 

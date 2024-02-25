@@ -4,19 +4,20 @@ import { Game } from "./type";
 
 const props = defineProps<{
   cell: Game["board"]["cells"][number][number]
+  isValidTurn: boolean
 }>()
 </script>
 
 <template>
-  <button class="cell" :disabled="!cell.isValid" :class="cell.isValid && 'isValid'">
+  <button class="cell" :disabled="!cell.isValid || !props.isValidTurn" :class="cell.isValid && 'isValid'">
      <Stone :stone="props.cell.stone"></Stone>
   </button>
 </template>
 
 <style scoped>
 .cell {
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   border: 1px solid black;
   border-radius: 0;
   background-color: lightgreen;

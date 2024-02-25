@@ -1,3 +1,4 @@
+import { getRandomInt } from "../../utils/getRandomInt"
 import { BOARD_SIZE, initialGame } from "./models"
 import { Board, Cell, CellNumber, Game } from "./type"
 
@@ -18,11 +19,13 @@ const updateCell = (cells: Board["cells"], row: CellNumber, col: CellNumber, cel
   return updated
 }
 
-export const initGame = () => updateCounts(updateCellValidity(initialGame))
-export const startGame = (): Game => {
+export const startGame = (gameMode: Game["mode"], playerTurn?: "first" | "second"): Game => {
+  const baseGame = updateCounts(updateCellValidity(initialGame))
   return {
-    ...initGame(),
-    status: "playing"
+    ...baseGame,
+    mode: gameMode,
+    status: "playing",
+    playerTurn: playerTurn === "first" ? "black" : "white"
   }
 }
 export const finishGame = (game: Game): Game => {
@@ -88,6 +91,20 @@ const switchTurn = (game: Game): Game => {
     turn: nextPlayer
   }
 }
+
+export const playStoneByAi = (game: Game): Game => {
+  let selectedCellIsValid = false
+  let selectedRow: CellNumber = 0
+  let selectedCol: CellNumber = 0
+  while (selectedCellIsValid === false) {
+    selectedRow = getRandomInt(8) as CellNumber
+    selectedCol = getRandomInt(8) as CellNumber
+    const selectedCell = game.board.cells[selectedRow][selectedCol]
+    selectedCellIsValid = selectedCell.stone === "empty" && selectedCell.isValid
+  }
+  return playStone(game, selectedRow, selectedCol)
+}
+
 const checkEndGame = (game: Game): boolean => game.board.counts.empty === 0
 const isOnBoard = (row: number, col: number) => row >= 0 && row < BOARD_SIZE && col >= 0 && col < BOARD_SIZE
 
