@@ -11,12 +11,12 @@ import { pathNames } from "../../router/index"
             prepend-icon="mdi-account"
             title="YourName: Coming Soon"
           >
-          <v-btn icon="mdi-cog" variant="text" size="small" :to="pathNames.Othello"></v-btn>
+          <v-btn icon="mdi-cog" variant="text" size="small"></v-btn>
         </v-list-item>
           <v-divider />
           <v-list-item prepend-icon="mdi-home" title="Home" :to="pathNames.Home" />
-          <v-list-item prepend-icon="mdi-account-supervisor-circle" title="Todo" :to="pathNames.Todo" />
-          <v-list-item prepend-icon="mdi-account-supervisor-circle" title="オセロ" :to="pathNames.Othello" />
+          <v-list-item prepend-icon="mdi-format-list-bulleted" title="Todo" :to="pathNames.Todo" />
+          <v-list-item prepend-icon="mdi-checkerboard" title="オセロ" :to="pathNames.Othello" />
         </v-list>
       </v-navigation-drawer>
       <v-main style="height: 250px"></v-main>
